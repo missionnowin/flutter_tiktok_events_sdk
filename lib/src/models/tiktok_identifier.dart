@@ -38,8 +38,8 @@ class TikTokIdentifier {
   /// - [email]: The user's email address.
   TikTokIdentifier({
     required this.externalId,
-    required this.externalUserName,
-    required this.email,
+    this.externalUserName,
+    this.email,
     this.phoneNumber,
   });
 }
