@@ -20,13 +20,13 @@ class TikTokIdentifier {
   final String externalId;
 
   /// The username of the user, as recognized by your system.
-  final String externalUserName;
+  final String? externalUserName;
 
   /// The phone number of the user, in a valid international format (e.g., `+1234567890`).
   final String? phoneNumber;
 
   /// The email address of the user.
-  final String email;
+  final String? email;
 
   /// Creates an instance of [TikTokIdentifier] with the required user identification data.
   ///
