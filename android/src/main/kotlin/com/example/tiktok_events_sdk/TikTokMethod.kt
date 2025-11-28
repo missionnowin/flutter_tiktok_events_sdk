@@ -153,8 +153,6 @@ sealed class TikTokMethod(
                     return
                 }
 
-                println(event_name);
-
                 // Validate event name format
                 if (!eventName.matches(Regex("^[a-zA-Z0-9_]+$"))) {
                     result.emitError(
