@@ -173,7 +173,7 @@ sealed class TikTokMethod(
                     }
 
                 TikTokBusinessSdk.trackTTEvent(event)
-                result.success("Event '$eventName' sent successfully!")
+                result.success("Event '${event.eventName}' sent successfully!")
             } catch (e: Exception) {
                 // Show detailed error in debug mode, generic error in production
                 result.emitError("An error occurred while sending the event.", e, true)
