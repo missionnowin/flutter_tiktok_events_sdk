@@ -78,8 +78,8 @@ class MethodChannelTiktokEventsSdk extends TiktokEventsSdkPlatform {
   @override
   Future<void> startTrack({bool hasConsent = true}) async {
     try {
-      await methodChannel.invokeMethod('startTrack', {'hasConsent' : hasConsent});
-      log('TikTok tracking started successfully');
+      final result = await methodChannel.invokeMethod('startTrack', {'hasConsent' : hasConsent});
+      log('TikTok tracking started successfully: $result');
     } catch (e, _) {
       throw TikTokException(
         'Failed to start tracking in TikTok SDK',
@@ -93,7 +93,7 @@ class MethodChannelTiktokEventsSdk extends TiktokEventsSdkPlatform {
     required TikTokIdentifier identifier,
   }) async {
     try {
-      await methodChannel.invokeMethod(
+      final result = await methodChannel.invokeMethod(
         methodName.identify,
         {
           'externalId': identifier.externalId,
@@ -102,7 +102,7 @@ class MethodChannelTiktokEventsSdk extends TiktokEventsSdkPlatform {
           'email': identifier.email,
         },
       );
-      log('TikTok identifier set successfully');
+      log('TikTok identifier set successfully: $result');
     } catch (e, _) {
       throw TikTokException(
         'Failed to identify user in TikTok SDK',
