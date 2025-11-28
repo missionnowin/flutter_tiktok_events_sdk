@@ -116,10 +116,11 @@ class MethodChannelTiktokEventsSdk extends TiktokEventsSdkPlatform {
     required TikTokEvent event,
   }) async {
     try {
-      return await methodChannel.invokeMethod(
+      final result = await methodChannel.invokeMethod(
         methodName.sendEvent,
         event.toJson(),
       );
+      log(result);
     } catch (e) {
       throw TikTokException(
         'Failed to log event in TikTok SDK',
